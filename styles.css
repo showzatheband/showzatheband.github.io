@@ -1,0 +1,113 @@
+/* Retro 90s / early 2000s vibes */
+:root{
+	--mint:#97e6d1;
+	--mint-2:#6acfb8;
+	--mint-3:#3fb9a0;
+	--mint-light:#dff7ee;
+	--mint-text:#e6fff7;
+	--panel:#07110f;
+	--bg:#000000;
+	--grain-opacity:0.1;
+}
+html,body{height:100%;}
+body{
+	background-color: #000000;
+	/* subtle asfalt pattern under the grain */
+	background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+	background-repeat: repeat;
+	color:#ffff00;
+	font-family: 'Courier New', Courier, monospace;
+	margin:0; padding:18px;
+	position:relative;
+}
+
+/* Grain layer placed behind content but above the pattern; opacity adjustable via --grain-opacity */
+body::before{
+	content: "";
+	pointer-events:none;
+	position:fixed; inset:0; z-index:0; opacity:var(--grain-opacity);
+	/* Embedded SVG noise as a fallback so grain is visible immediately (no external PNG required).
+	   Replace with url('assets/grain.png') later if you prefer a local file. */
+	background-image: url(assets/grain.gif);
+	background-repeat: repeat; mix-blend-mode: screen;
+}
+
+/* Ensure the main centered content sits above the grain layer */
+center{position:relative; z-index:1}
+.neon{
+	font-family: Impact, Charcoal, sans-serif;
+	color:var(--mint);
+	font-size:64px;
+	text-shadow: 0 0 6px var(--mint), 0 0 10px var(--mint), 0 0 20px var(--mint-2);
+	margin:6px 0 2px;
+}
+.tag{color:var(--mint-2);margin-top:0;margin-bottom:10px;font-size:18px}
+.nav{color:var(--mint);font-weight:bold;text-decoration:none;padding:6px 12px;border:2px solid var(--mint);background:var(--panel)}
+.nav:hover{background:#09201b}
+.navbar{display:flex;align-items:center;justify-content:center;gap:12px;margin:8px 0}
+.hamburger{display:none;background:var(--panel);color:var(--mint);border:2px solid var(--mint);padding:8px 10px;font-size:20px;cursor:pointer}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{display:inline-block}
+.kitt{border:0;height:18px;background:linear-gradient(90deg,
+	#aef5e2 0%,
+	#a6f0dc 6%,
+	#9febd7 20%,
+	#97e6d1 50%,
+	#9febd7 80%,
+	#a6f0dc 94%,
+	#aef5e2 100%);
+	margin:18px 0}
+.retro-btn{display:inline-block;padding:6px 10px;border:2px outset var(--mint);background:#07110f;color:var(--mint-text);margin-right:8px;text-decoration:none}
+.retro-btn:hover{background:#0b2b24}
+.blink{animation:blink 1s steps(1) infinite;color:#ff0000;font-weight:bold}
+@keyframes blink{50%{opacity:0}}
+.list{color:var(--mint-light);text-align:left;max-width:640px;margin:0 auto}
+.counter{margin-top:14px}
+.links a{color:var(--mint)}
+.legal{font-size:12px;color:orange}
+
+/* Releases grid */
+.releases{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:8px}
+.release{width:300px;text-align:center}
+.release-cover{width:100%;height:auto;border:3px solid var(--mint);display:block;margin:0 auto 8px}
+
+/* Video grid for watch page */
+.video-grid{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
+.video-item{width:560px;max-width:100%}
+.video-item iframe{width:100%;height:315px}
+
+/* small responsive tweaks */
+@media(max-width:640px){
+	.neon{font-size:40px}
+	img[alt="retro banner"]{width:100%}
+}
+
+/* intentionally old-school table look */
+table{border-collapse:collapse}
+
+/* Responsive & mobile-first tweaks */
+img, .CENy8b { max-width:100%; height:auto; display:block; }
+
+
+/* Make nav stack on small screens and improve tap targets */
+@media (max-width:640px){
+	/* Avoid hiding all tables — target only layout tables if needed via `.hide-on-mobile` */
+	table.hide-on-mobile { display:none; }
+	.hamburger{display:block}
+	.nav-links{display:none;flex-direction:column;width:100%;align-items:center}
+	.nav-links.open{display:flex}
+	.nav{ display:block; width:90%; margin:8px auto; font-size:18px; padding:12px 10px; box-sizing:border-box; text-align:center}
+	.retro-btn{ display:block; width:90%; margin:8px auto; padding:12px; font-size:16px; }
+	.neon{font-size:40px}
+	.tag{font-size:16px}
+	.list{padding-left:12px}
+}
+
+/* Larger tap targets generally */
+.nav, .retro-btn{min-height:44px;line-height:1.2}
+
+/* Reduce non-essential visuals on very small screens */
+@media (max-width:360px){
+	.neon{font-size:28px}
+	.tag{font-size:14px}
+}

@@ -1,0 +1,12 @@
+{
+  "name": "showza-guestbook",
+  "version": "1.0.0",
+  "description": "Guestbook backend for Showza site",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
