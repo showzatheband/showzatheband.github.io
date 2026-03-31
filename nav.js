@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function(){
+// Hamburger menu logic for Showza site
+(function(){
   const btns = document.querySelectorAll('.hamburger');
   btns.forEach(btn=>{
     const nav = btn.parentElement.querySelector('.nav-links');
@@ -27,4 +28,4 @@ document.addEventListener('DOMContentLoaded', function(){
 
     document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') setOpen(false); });
   });
-});
+})();

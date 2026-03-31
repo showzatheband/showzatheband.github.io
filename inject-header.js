@@ -11,5 +11,10 @@
       var root = getRoot();
       html = html.replace(/{ROOT}/g, root);
       document.getElementById('showza-header').outerHTML = html;
+      // Dynamically load nav.js after header is injected
+      var script = document.createElement('script');
+      script.src = root + 'nav.js';
+      script.defer = true;
+      document.body.appendChild(script);
     });
 })();
