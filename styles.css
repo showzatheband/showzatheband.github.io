@@ -68,7 +68,7 @@ center{position:relative; z-index:1}
 	#9febd7 80%,
 	#a6f0dc 94%,
 	#aef5e2 100%);
-	margin:18px 0}
+	margin: 18px 0}
 .retro-btn{display:inline-block;padding:2px 8px;border:2px outset var(--mint);background:transparent;color:var(--mint-text);margin-right:8pxtext-decoration:var(--mint);text-align:center;}
 .retro-btn:hover{background:hsla(167, 62%, 75%, 0.918)}
 .blink{animation:blink 1s steps(1) infinite;color:#ff0000;font-weight:bold}
