@@ -69,7 +69,7 @@ center{position:relative; z-index:1}
 	#a6f0dc 94%,
 	#aef5e2 100%);
 	margin: 18px 0}
-.retro-btn{display:inline-block;padding:2px 8px;border:2px outset var(--mint);background:transparent;color:var(--mint-text);margin-right:8pxtext-decoration:var(--mint);text-align:center;}
+.retro-btn{display:inline-block;padding:2px 8px;border:2px outset var(--mint);background:transparent;color:var(--mint-text);margin-right:8px;text-decoration:var(--mint);text-align:center;}
 .retro-btn:hover{background:hsla(167, 62%, 75%, 0.918)}
 .blink{animation:blink 1s steps(1) infinite;color:#ff0000;font-weight:bold}
 @keyframes blink{50%{opacity:0}}
@@ -84,8 +84,9 @@ center{position:relative; z-index:1}
 
 .releases{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:8px}
 .release{width:300px;text-align:center}
-.grid-release-cover{width:100%;height:auto; solid var(--mint);display:block;margin:0 auto 8px}
-.release-cover{width:35%;height:auto; solid var(--mint);display:block;margin:0 auto 8px}
+.grid-release-cover{width:100%;height:auto;color:var(--mint);display:block;margin:0 auto 8px}
+.grid-release-cover:hover{filter:brightness(1.2) drop-shadow(0 2px 10px var(--mint))}
+.release-cover{width:35%;height:auto;color:var(--mint);display:block;margin:0 auto 8px}
 
 
 .video-grid{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
@@ -96,7 +97,7 @@ center{position:relative; z-index:1}
 @media(max-width:640px){
 	.neon{font-size:40px}
 	img[alt="retro banner"]{width:100%}
-	/* Remove conflicting display:block and padding for .nav and .retro-btn */
+
 	.nav, .retro-btn{
 		display: inline-flex;
 		align-items: center;
@@ -106,7 +107,7 @@ center{position:relative; z-index:1}
 		font-size: 18px;
 		line-height: 1.2;
 		box-sizing: border-box;
-		/* keep other existing styles */
+	
 	}
 	.neon{font-size:40px}
 	.tag{font-size:16px}
